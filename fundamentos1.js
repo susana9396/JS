@@ -8,7 +8,8 @@ function array (){
     }
     return arr;
 }
-array();
+console.log(array());
+
 //Consigue pares hasta 1000 - Escribe una función que entregue la suma de todos los número pares del 1 al 1000 - Puedes usar un operador de módulo para este ejercicio. 
 
 function sum_event(){
@@ -20,7 +21,7 @@ function sum_event(){
     }
     return sum;
 }
-sum_event();
+console.log(sum_event());
 
 //Suma impares hasta 5000 - Escribe una función que devuelva la suma de todos los números impares entre 1 y 5000 (ej: 1+3+5+...+4997+4999).
 
@@ -34,7 +35,7 @@ function sum_5000(){
     return sum;
 }
 
-sum_5000();
+console.log(sum_5000());
 
 //Itera un arrayEscribe una función que devuelva la suma de todos los valores dentro de un array (ej:  [1,2,5] returns 8. [-5,2,5,12] returns 14). 
 
@@ -99,12 +100,14 @@ function mmayor(arr,y){
     }
     return count;
 }
-console.log(mmayor([1,2,3],6));
+console.log(mmayor([1,9,3],2));
+
 //Cuadrados Dado un array con múltiples valores, escribe una función que reemplace cada valor por el cuadrado del mismo valor (ej: [1,5,10,-2] será [1,25,100,4]).
 
 function cuadrado(arr){
-    for(i=0;i<arr.lenght;i++){
-        arr[i]=arr[i]*arr[i];
+    for(i=0;i<arr.length;i++){
+        arr[i]=arr[i]+arr[i];
+      
     }
     return arr
 }
@@ -119,7 +122,7 @@ function neg(arr){
     }
     return arr;
 }
-console.log(neg([1,2,3]));
+console.log(neg([1,5,10,-2]));
 
 // Max/Min/Avg - Dado un array con múltiples valores, escribe una función que devuelva un nuevo array que solo contenga el valor mayor (max), menor (min) y promedio (avg) del array original (ej: [1,5,10,-2] devolverá [10,-2,3.5]).
 function maxminavg(arr){
@@ -143,7 +146,7 @@ function maxminavg(arr){
     return arrnew;
 
 }
-console.log(maxminavg([1,2,3]));
+console.log(maxminavg( [1,5,10,-2]));
 
 //Intercambia Valores -Escribe una función que intercambie el primer y el último valor de cualquier array. La extensión mínima predeterminada del array es 2 (ej: [1,5,10,-2] será [-2,5,10,1]). 
 
@@ -174,4 +177,4 @@ function string(arr){
     return arr;
 }
 
-console.log(string[1,2,3]));
+console.log(string([-1,-3,2]));
