@@ -1,3 +1,5 @@
+//RESPUESTAS CORRECTAS : 13
+
 function a(){
     return 35;
 }
@@ -75,6 +77,7 @@ function a(){
 }
 a();
 //Output=2,5,8,11
+//Output_erroneo=2,5,8,12
 
 function a(b,c){
     for(var i=b; i<c; i++) {
@@ -86,6 +89,7 @@ a(0,10);
 console.log(a(0,10));
 
 //Output=0,1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7,8,9,0
+//Output_erroneo=0,1,2,3,4,5,6,7,8,9,0
 
 function a(){
     for(var i=0; i<10; i++){
