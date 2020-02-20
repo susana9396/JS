@@ -102,6 +102,41 @@ console.log(dup([-1,1,1,1]));
 /*Pares e Impares - Crea una función que acepte un array. Cada vez que ese array tenga 3 valores impares seguidos, 
 imprime (print) “¡Qué imparcial!”, y cada vez que tenga 3 pares seguidos, imprime (print) “¡Es para bien!”.*/
 function pi(arr){
+  arr2=[];
+  arr3=[];
+  x=0;
+  impar=0;
+  par=0;
+  for(i=0; i<arr.length;i++){
+       if (arr[i]%2!==0){
+          impar=impar+1;
+          if(impar===3){
+           arr2[i]='“¡Qué imparcial!”';
+           impar=0;
+             par=0;
+          }
+       }
+       else if(arr[i]%2===0){
+           par=par+1;
+           if(par===3){
+             arr2[i]='“¡Es para bien!”';
+             par=0;
+             impar=0;
+           } 
+       }
+  } 
+for(i=0; i<arr2.length;i++){
+       if (arr2[i]!==undefined){
+         arr3[x]=arr2[i];
+         x++;
+       }
+}
+return arr3;
+}
+console.log(pi([1,5,7,9,2,6,6,5,9,9,9,5,8,8,8,6,4,4,7]));
+
+//o
+function pi(arr){
     arr2=[];
    arr3=[];
     x=0;
@@ -218,26 +253,63 @@ function neg(arr){
 /*Siempre hambriento - Crea una función que acepte un array e imprima (print) “yummy” cada vez que alguno de los valores 
 sea “comida”. Si ningún valor es “comida”, entonces imprime “tengo hambre” una vez. */
 
+function comida(arr){
+    
+  for(i=0; i<arr.length ;i++){
+    if(arr[i]==='comida' || arr[i]==='Comida'){
+      
+      console.log('Yummi')
+      }else {
+        console.log('tengo hambre')
+      }
+   
+  }
+
+ return;
+}
+console.log(comida(['comida', 3,'nada',56,'Comida']));
+
+
 
 /*Cambiar hacia el centro -  Dado un array, cambia el primer y último valor, el tercero con el ante penútimo, etc.
 Ejemplo: cambiaHaciaElCentro([true, 42, “Ada”, 2, “pizza”]) cambia el array a [“pizza¨, 42, “Ada”, true]. cambiaHaciaElCentro([1,2,3,4,5,6])
 cambia el array a [6,2,4,3,5,1]. No es necesario devolver (return) el array esta vez. */
 
 function centro(arr){
-    x=0
-    y=arr[arr.length-1]
-      for(i=arr.length-1;  i>=arr.length/2>>0 ;i=i-2){
-       arr[i]=arr[x];
-       arr[x]=y
-          x=x+2;
-          y=y-2;
-        
-      }
+  x=0;
+  y=arr.length-1;
+
+    for(i=0; i<arr.length/2 ;i=i+2){
+          t=arr[i];
+          arr[i]=arr[y];
+          arr[y]=t;
+          console.log(i);
+          console.log(y);
+          console.log(arr.length);        
+          y=y-2-i;
       
-    return arr;
-  }
-  console.log(centro([1,2,3,4,5,6]));
-  console.log(centro([true, 42, 'Ada', 2, 'pizza']));
+     
+    
+    }
+    
+  return arr;
+}
+console.log(centro([1,2,3,4,5,6]));
+console.log(centro([true, 42, 'Ada', 2, 'pizza']));
+
 
 /*Escala el Array - Dado un array arr y un número num, multiplica todos los valores en el array arr por el número
-num, y devuelve el array arr modificado. Por ejemplo, escalaArray([1,2,3], 3] debería devolver [3,6,9].*/
+num, y devuelve el array arr modificado. Por ejemplo, escalaArray([1,2,3], 3] debería devolver [3,6,9].**/
+
+  
+function mult(arr){
+  arr1=arr[0];
+   y=arr[1];
+   for(i=0; i<arr1.length ;i++){
+    arr1[i]=arr1[i]*y;
+    
+   }
+   
+ return arr1;
+}
+console.log(mult([[1,2,3], 3]));
