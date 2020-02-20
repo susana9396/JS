@@ -32,6 +32,8 @@ console.log(imprimir([-1,12,5,-9]));
 
 /*Imprime (print) uno, devuelve (return) otro- Crea una función para un array de números. La función debería imprimir
  (print) el penúltimo valor y devolver (return) el primer valor impar.*/
+
+//Devuelve el primer valor impar y el penúltimo número
  function impar(arr){
     arr2=0
     for(i=0; i<arr.length;i++){
@@ -47,6 +49,7 @@ console.log(imprimir([-1,12,5,-9]));
 console.log(impar([13,5,7,9,5,8,30]));
 
 //o
+//Devuelve el primer valor impar y devuelve el penúltimo valor impar
 function impar(arr){
     arr2=0
     arr3=[];
@@ -167,12 +170,12 @@ console.log(pi([1,5,7,9,2,6,6,5,9,9,9,5,8,8,8,6,4,4,7]));
 aquellos cuyo índice es impar (arr[1], arr[3], arr[5], etc). Luego, console.log cada valor del array y devuelve arr.*/
 function indice(arr){
  
-    for(i=0; i<arr.length;i++){
-         if (arr[i]%2!==0){
-           arr[i]=1
-         }
-    }
-  return arr;
+  for(i=0; i<arr.length;i++){
+       if (i%2!==0){
+         arr[i]=arr[i]+1
+       }
+  }
+return arr;
 }
 console.log(indice([1,7,9,6,5,9,5,8,6,4,4,7]));
 
@@ -275,20 +278,15 @@ function centro(arr){
     for(i=0; i<arr.length/2 ;i=i+2){
           t=arr[i];
           arr[i]=arr[y];
-          arr[y]=t;
-          console.log(i);
-          console.log(y);
-          console.log(arr.length);        
-          y=y-2-i;
-      
-     
-    
+          arr[y]=t;   
+          y=y-2-i;   
     }
     
   return arr;
 }
 console.log(centro([1,2,3,4,5,6]));
 console.log(centro([true, 42, 'Ada', 2, 'pizza']));
+
 
 
 /*Escala el Array - Dado un array arr y un número num, multiplica todos los valores en el array arr por el número
