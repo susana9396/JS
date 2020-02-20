@@ -137,36 +137,29 @@ console.log(pi([1,5,7,9,2,6,6,5,9,9,9,5,8,8,8,6,4,4,7]));
 
 //o
 function pi(arr){
-    arr2=[];
-   arr3=[];
-    x=0;
-    impar=0;
-    par=0;
-    for(i=0; i<arr.length;i++){
-         if (arr[i]%2!==0){
-            impar=impar+1;
-            if(impar===3){
-             arr2[i]='“¡Qué imparcial!”';
+  arr2=[];
+ arr3=[];
+  x=0;
+  impar=0;
+  par=0;
+  for(i=0; i<arr.length;i++){
+       if (arr[i]%2!==0){
+          impar=impar+1;
+          if(impar===3){
+           console.log('“¡Qué imparcial!”');
+           impar=0;
+             par=0;
+          }
+       }
+       else if(arr[i]%2===0){
+           par=par+1;
+           if(par===3){
+             console.log('“¡Es para bien!”');
+             par=0;
              impar=0;
-               par=0;
-            }
-         }
-         else if(arr[i]%2===0){
-             par=par+1;
-             if(par===3){
-               arr2[i]='“¡Es para bien!”';
-               par=0;
-               impar=0;
-             } 
-         }
-    } 
-  for(i=0; i<arr2.length;i++){
-         if (arr2[i]!==undefined){
-           arr3[x]=arr2[i];
-           x++;
-         }
-  }
-  return arr3;
+           } 
+       }
+  } 
 }
 console.log(pi([1,5,7,9,2,6,6,5,9,9,9,5,8,8,8,6,4,4,7]));
 
