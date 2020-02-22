@@ -30,18 +30,22 @@ function factorial (num){
 //2 (fib(1) + fib(2)3, o 1+1), fibonacci(4) = 3 (1+2), fibonacci(5) = 5 (2+3), fibonacci(6) = 8 (3+5), fibonacci(7) = 
 //13 (5+8). Haz esto primero sin usar recursión. Si no sabes qué es una recursión, no te preocupes puesto que vamos a 
 //introducir este concepto en la Parte 2 de esta actividad. 
-function Fib(n){
-    if (n==0 || n==1){
-        return n;
-    
-    }
-    else{
-        return Fib(n-1) + Fib(n-2);
-    }
+function fib(n){
+  a = 1;
+  b = 0; 
+  temp=0;
+
+  while (n > 0){
+    temp = a;  
+    a = a + b;
+    b = temp;
+    n--;
+  }
+
+  return b;
 }
 
-console.log(Fib(3));
-
+console.log(fib(20));
 
 //Array: Penúltimo: Devuelve el penúltimo elemento del array. Dado [42,true,4,”Liam”, 7] devuelve “Liam”. Si el array es 
 //muy pequeño, devuelve null.  
@@ -95,34 +99,42 @@ function segundo (arr){
 // Convierte [4, "Ulysses", 42, false]   a    [4,4, "Ulysses", 42, 42, false].
 
 function dup(arr){
-    array1 = [];
-      
-      for (i=0; i<arr.length; i=i+1){
+  array1 = [];
+  y=0;
+  for (i=0; i<arr.length; i=i+1){
       if (i%2===0){
         array1.push(arr[i]);
-        concat = array1.concat(arr);
+        concat = arr.concat(array1);
         arr1=concat
         
       }
-      }
+  }
+  x=0;
+  console.log(arr1)
+  console.log(array1)
+  z=2;
+  for(i=0; i<arr1.length; i++){
+  if (i!==z){
+    arr1[i]=array1[y]
+    x=x+1;  
+    }else {
       x=0;
-    for(i=0; i<arr.length; i=i+2){
-      if (i%2===0){
-        arr[i]=array1[x]
-        x=x+1
-        }
-      }
-    
-      y=0
-    for(i=1; i<arr.length; i=i+2){
-        arr[i]=array1[y]
-        y=y+1
-      }  
-    
-      y=0
-    
+      y=y+1;
+      z=z+3;
       
-      return arr1;
     }
-    console.log(dup([4,'Ulysses', 42, false]));
-    console.log(dup([4,'Ulysses', 42, false,'shj',true]));
+  }
+  v=1
+  console.log(arr1)
+  for(i=2; i<arr1.length; i=i+3){
+    
+   arr1[i]=arr[v]
+    v=v+2;
+  }  
+
+  return arr1;
+}
+
+
+
+console.log(dup([4,'Ulysses', 42, false]));
