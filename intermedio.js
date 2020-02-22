@@ -96,7 +96,11 @@ function segundo (arr){
   }
   console.log(segundo([42,1,4,3.14,7]));
 //Doble Problema Par: Crea una función que cambie un array dado duplicando cada uno de sus elementos en una posición par, y manteniendo el orden original.
+<<<<<<< HEAD
 // Convierte [4, "Ulysses", 42, false]   a    [4,4, "Ulysses", 42, 42, false].
+=======
+// Convierte [4, "Ulysses", 42, false]   a  ggd  [4,4, "Ulysses", 42, 42, false].
+>>>>>>> 11f4eacb7c451a1ccb2024d2ae60b7bd8ef2848b
 
 function dup(arr){
   array1 = [];
@@ -137,4 +141,8 @@ function dup(arr){
 
 
 
+<<<<<<< HEAD
 console.log(dup([4,'Ulysses', 42, false]));
+=======
+console.log(dup([4,'Ulysses', 42, false]));
+>>>>>>> 11f4eacb7c451a1ccb2024d2ae60b7bd8ef2848b
