@@ -22,3 +22,6 @@ dojo.location.state = "Washington";
 dojo.location.zipcode = "unknown";
 
 console.log(dojo);
+
+console.log(dojo.location.state)
+
