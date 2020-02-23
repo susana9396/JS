@@ -90,13 +90,15 @@
 		{
 
 		//boundary restrictions
+		// si y o x está fuera de los limites , return es falso.
 		if(y<0 || y>=world.length || x<0 || x>=10)
 				return false;
 
 			//if the current color is NOT the same as the original color you're trying to replace, get out of the fill function
+			// si world[y][x] es distinto al color que hago click, return es falso.
 			if(world[y][x] != original_color)
 				return false;
-
+            //si pasa el if anterior, entonces la funcion se llama a si misma
 			world[y][x] = color;
 			fill(x,y-1,original_color, color);
 			fill(x,y+1,original_color, color);
