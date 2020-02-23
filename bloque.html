@@ -69,7 +69,7 @@
 				output += '</div>';
 			}
 			document.getElementById('container').innerHTML = output;
-			// console.log(output);
+			console.log(output);
 		}
 
 		document.onclick = function(e)
@@ -89,14 +89,20 @@
 		function fill(x,y,original_color, color)
 		{
 
-			//your recursion codes here
+		//boundary restrictions
+		if(y<0 || y>=world.length || x<0 || x>=10)
+				return false;
+
+			//if the current color is NOT the same as the original color you're trying to replace, get out of the fill function
+			if(world[y][x] != original_color)
+				return false;
 
 			world[y][x] = color;
-
-			// your recursion codes hereg
-
+			fill(x,y-1,original_color, color);
+			fill(x,y+1,original_color, color);
+			fill(x-1,y,original_color, color);
+			fill(x+1,y,original_color, color);
 			drawWorld();
-			
 		}
 
 		drawWorld();
