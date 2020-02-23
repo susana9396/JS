@@ -110,8 +110,6 @@ function dup(arr){
       }
   }
   x=0;
-  console.log(arr1)
-  console.log(array1)
   z=2;
   for(i=0; i<arr1.length; i++){
   if (i!==z){
@@ -125,7 +123,6 @@ function dup(arr){
     }
   }
   v=1
-  console.log(arr1)
   for(i=2; i<arr1.length; i=i+3){
     
    arr1[i]=arr[v]
