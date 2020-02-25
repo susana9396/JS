@@ -31,6 +31,17 @@
             height: 20px;
             position: absolute;
         }
+        div#score{
+            border:1px solid white;
+            widows: 30px;
+            height: 20px;
+            color:white;
+            padding:7px;
+            text-align: center;
+            position: absolute;
+            top:0px;
+            left:220px;
+        }
     </style>
 </head>
 <body>
@@ -38,6 +49,7 @@
     <div id='container'>
         <div id='world'></div>
         <div id='pacman' style='top: 29px; left: 29px;'></div>
+        <div id='score'>0</div>
     </div>
      list of features to build
 
@@ -82,12 +94,15 @@
         document.getElementById('pacman').style.top=pacman.y+"px";
         document.getElementById('pacman').style.left=pacman.x+"px";
     }
+    function displayScore(){
+        document.getElementById('score').innerHTML=score;
+    }
     displayWorld();
     displayPacman();
 
 
     document.onkeydown=function(e){
-        if(e.keyCode==37){
+        if(e.keyCode==37 && world[pacman.y][pacman.x-1] !=2){
            pacman.x-= 20;
         }
         else if (e.keyCode==39){
@@ -98,6 +113,13 @@
         }
         else if (e.keyCode==40){
             pacman.y+=20
+        }
+
+        if (world[pacman.y][pacman.x]==1){
+            world[pacman.y][pacman.x]=0;
+            score+=10;
+            displayWorld();
+            displayScore();
         }
         console.log(e.keyCode);
 
