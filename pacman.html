@@ -24,7 +24,7 @@
 
         }
         div#pacman{
-            background: url('pacman.gif');
+            background: url('Pacman.gif');
             background-repeat: no-repeat;
             background-position: center;
             background-size: cover;
@@ -42,6 +42,11 @@
             position: absolute;
             top:0px;
             left:420px;
+        }
+        div.cherry{
+            background: url('cherry.png');
+            background-repeat: no-repeat;
+            background-position: center;
         }
     </style>
 </head>
@@ -63,18 +68,19 @@
              [2,0,1,2,1,1,1,1,1,2,1,2,1,1,1,1,1,2,1,2],
              [2,1,1,2,1,2,2,2,1,2,1,1,2,1,2,2,2,1,1,2],
              [2,1,1,2,1,2,2,2,1,2,1,1,1,1,2,2,2,1,1,2],
-             [2,1,1,2,1,2,1,2,1,1,1,2,1,2,1,2,1,2,1,2],
-             [2,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
+             [2,1,1,2,1,2,1,2,1,1,1,2,1,2,3,2,1,2,1,2],
+             [2,3,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
              [2,1,1,2,2,2,1,2,1,2,1,1,2,2,2,1,2,1,2,2],
              [2,1,1,1,1,1,1,2,1,2,2,1,1,1,1,1,1,2,1,2],
-             [2,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,2],
+             [2,1,1,1,3,1,1,3,1,2,1,1,1,1,1,3,1,1,1,2],
              [2,1,1,2,1,2,1,2,1,1,1,2,1,2,1,2,1,2,1,2],
              [2,1,1,2,1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,2],
-             [2,1,1,2,2,2,1,2,1,2,1,1,2,2,2,1,2,1,2,2],
+             [2,1,1,2,2,2,1,2,1,2,1,1,2,2,2,3,2,1,2,2],
              [2,1,1,1,1,1,1,2,1,2,2,1,1,1,1,1,1,2,1,2],
-             [2,1,1,1,1,1,1,1,1,2,1,1,1,1,1,1,1,1,1,2],
+             [2,1,1,1,1,1,3,1,1,2,1,1,1,1,1,3,1,1,1,2],
              [2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2,2]
          ];
+    var rotation = 0;
     var score=0;
     var pacman = {
         x:1,
@@ -92,6 +98,8 @@
                     output+="<div class='coin'></div>";
                 if(world[i][j]==0)
                     output+="<div class='empty'></div>";
+                if(world[i][j]==3)
+                    output+="<div class='cherry'></div>";
              }
             output+="\n</div>";
          }
@@ -112,7 +120,8 @@
     
 
     document.onkeydown=function(e){
-        if(e.keyCode==37 && world[pacman.y][pacman.x-1] !=2 ){ // PACMAN MOVE LEFT
+        
+        if(e.keyCode==37 && world[pacman.y][pacman.x/-1] !=2 ){ // PACMAN MOVE LEFT
            pacman.x--;
         }
         else if (e.keyCode==39 && world[pacman.y][pacman.x+1] !=2){ // PACMAN MOVE UP
@@ -127,6 +136,14 @@
         if(world[pacman.y][pacman.x]==1){
             world[pacman.y][pacman.x]=0;
             score+=10;
+            
+            displayWorld();
+            displayScore();
+        }
+        if(world[pacman.y][pacman.x]==3){
+            world[pacman.y][pacman.x]=0;
+            score+=50;
+        
             displayWorld();
             displayScore();
         }
